@@ -1,0 +1,50 @@
+﻿
+authors for db:
+INSERT INTO Authors (Name, Address, ImgDir) VALUES ('J.K. Rowling', 'London, UK', '/img/jk_rowling.jpg');
+INSERT INTO Authors (Name, Address, ImgDir) VALUES ('Stephen King', 'Bangor, ME', '/img/stephen_king.jpg');
+INSERT INTO Authors (Name, Address, ImgDir) VALUES ('Agatha Christie', 'Devon, UK', '/img/agatha_christie.jpg');
+INSERT INTO Authors (Name, Address, ImgDir) VALUES ('J.R.R. Tolkien', 'Oxford, UK', '/img/tolkien.jpg');
+INSERT INTO Authors (Name, Address, ImgDir) VALUES ('Harper Lee', 'Monroeville, AL', '/img/harper_lee.jpg');
+
+
+authors for db:
+-- For J.K. Rowling
+INSERT INTO Books (Title, Language, ImgDir, AuthorId) VALUES ('Harry Potter and the Philosopher''s Stone', 'English', '/img/hp1.jpg', 1);
+INSERT INTO Books (Title, Language, ImgDir, AuthorId) VALUES ('Harry Potter and the Chamber of Secrets', 'English', '/img/hp2.jpg', 1);
+INSERT INTO Books (Title, Language, ImgDir, AuthorId) VALUES ('Harry Potter and the Prisoner of Azkaban', 'English', '/img/hp3.jpg', 1);
+INSERT INTO Books (Title, Language, ImgDir, AuthorId) VALUES ('Harry Potter and the Goblet of Fire', 'English', '/img/hp4.jpg', 1);
+INSERT INTO Books (Title, Language, ImgDir, AuthorId) VALUES ('Harry Potter and the Order of Phoenix', 'English', '/img/hp5.jpg', 1);
+
+-- For Stephen King
+INSERT INTO Books (Title, Language, ImgDir, AuthorId) VALUES ('The Shining', 'English', '/img/shining.jpg', 3);
+INSERT INTO Books (Title, Language, ImgDir, AuthorId) VALUES ('Misery', 'English', '/img/misery.jpg', 3);
+INSERT INTO Books (Title, Language, ImgDir, AuthorId) VALUES ('The Stand', 'English', '/img/stand.jpg', 3);
+INSERT INTO Books (Title, Language, ImgDir, AuthorId) VALUES ('It', 'English', '/img/it.jpg', 3);
+INSERT INTO Books (Title, Language, ImgDir, AuthorId) VALUES ('Pet Sematary', 'English', '/img/pet_sematary.jpg', 3);
+
+-- For Agatha Christie
+INSERT INTO Books (Title, Language, ImgDir, AuthorId) VALUES ('Murder on the Orient Express', 'English', '/img/murder_on_orient_express.jpg', 4);
+INSERT INTO Books (Title, Language, ImgDir, AuthorId) VALUES ('Death on the Nile', 'English', '/img/death_on_nile.jpg', 4);
+INSERT INTO Books (Title, Language, ImgDir, AuthorId) VALUES ('And Then There Were None', 'English', '/img/ten_little_indians.jpg', 4);
+INSERT INTO Books (Title, Language, ImgDir, AuthorId) VALUES ('The Murder of Roger Ackroyd', 'English', '/img/murder_of_roger_ackroyd.jpg', 4);
+INSERT INTO Books (Title, Language, ImgDir, AuthorId) VALUES ('The ABC Murders', 'English', '/img/abc_murders.jpg', 4);
+
+-- For J.R.R. Tolkien
+INSERT INTO Books (Title, Language, ImgDir, AuthorId) VALUES ('The Hobbit', 'English', '/img/hobbit.jpg', 5);
+INSERT INTO Books (Title, Language, ImgDir, AuthorId) VALUES ('The Fellowship of the Ring', 'English', '/img/fellowship_of_ring.jpg', 5);
+INSERT INTO Books (Title, Language, ImgDir, AuthorId) VALUES ('The Two Towers', 'English', '/img/two_towers.jpg', 5);
+INSERT INTO Books (Title, Language, ImgDir, AuthorId) VALUES ('The Return of the King', 'English', '/img/return_of_king.jpg', 5);
+INSERT INTO Books (Title, Language, ImgDir, AuthorId) VALUES ('The Silmarillion', 'English', '/img/Silmarillion.jpg', 5);
+
+
+
+author Harper Lee
+
+INSERT INTO Book (Title, Language, ImgDir, AuthorId) VALUES ('To Kill a Mockingbird', 'English', '/img/to_kill_a_mockingbird.jpg', 6);
+INSERT INTO Book (Title, Language, ImgDir, AuthorId) VALUES ('Go Set a Watchman', 'English', '/img/go_set_a_watchman.jpg', 6);
+INSERT INTO Book (Title, Language, ImgDir, AuthorId) VALUES ('The Mockingbird Next Door: Life with Harper Lee', 'English', '/img/the_mockingbird_next_door.jpg', 6);
+INSERT INTO Book (Title, Language, ImgDir, AuthorId) VALUES ('The Harper Lee Collection', 'English', '/img/the_harper_lee_collection.jpg', 6);
+INSERT INTO Book (Title, Language, ImgDir, AuthorId) VALUES ('Mockingbird Songs: My Friendship with Harper Lee', 'English', '/img/mockingbird_songs.jpg', 6);
+
+
+

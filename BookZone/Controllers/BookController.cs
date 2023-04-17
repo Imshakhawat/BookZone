@@ -1,6 +1,7 @@
 ﻿using BookZone.Data;
 using BookZone.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookZone.Controllers
 {
@@ -16,7 +17,7 @@ namespace BookZone.Controllers
 		}
 		public IActionResult Index()
 		{
-			IEnumerable<Book> bookList = _db.Books;
+			IEnumerable<Book> bookList = _db.Books.Include(x => x.Author);
 
 
 			return View(bookList);

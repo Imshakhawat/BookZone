@@ -3,6 +3,9 @@
     ViewData["Title"] = "Index";
 }
 
+
+<div class="text-center"> <h1>Available books</h1></div>
+
 <div class="container d-flex flex-wrap justify-content-center">
 
 
@@ -13,7 +16,12 @@
             <div class="card-body">
                 <h5 class="card-title">@item.Title</h5>
                 <p class="card-text">@item.Language</p>
-                <p class="card-text">null</p>
+                <p class="card-text">
+                    <a asp-controller="Author" asp-action="Details" asp-route-id="@item.AuthorId"
+                   class="">@item.Author.Name</a>
+                    @*<a>@Html.ActionLink(item.Author.Name, "Details", "Author", new { id = item.Id }, null)</a>*@
+
+                   </p>
             </div>
         </div>
     }

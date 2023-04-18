@@ -15,6 +15,8 @@ namespace BookZone.Controllers
 			_db = db;
 
 		}
+
+        //shows the list of all books
 		public IActionResult Index()
 		{
 			IEnumerable<Book> bookList = _db.Books.Include(x => x.Author);
@@ -23,22 +25,22 @@ namespace BookZone.Controllers
 			return View(bookList);
 		}
 
+        //shows the details of a book
         public IActionResult Details(int Id)
         {
 
-            //var author = _db.Authors.Find(Id);
-            // var author = _db.Authors.FirstOrDefault(u => u.Id == Id);
 
             var selectedBook = _db.Books.Include(a => a.Author).FirstOrDefault(a => a.Id == Id);
 
             return View(selectedBook);
         }
 
+
+        //Get the the book to Edit
         public IActionResult Edit(int Id)
         {
 
-            //var author = _db.Authors.Find(Id);
-            // var author = _db.Authors.FirstOrDefault(u => u.Id == Id);
+
 
             var selectedBook = _db.Books.Include(a => a.Author).FirstOrDefault(a => a.Id == Id);
 
@@ -46,28 +48,25 @@ namespace BookZone.Controllers
         }
 
 
-        //POST
+        //Post the edited book
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Book obj)
+        public IActionResult Edit(Book book)
         {
 
 
-            var selectedBook = _db.Books.Include(a => a.Author).FirstOrDefault(a => a.Id == obj.Id);
+            var selectedBook = _db.Books.Include(a => a.Author).FirstOrDefault(a => a.Id == book.Id);
 
-            selectedBook.Title = obj.Title;
+            selectedBook.Title = book.Title;
 
 
-           // _db.Books.Update(obj);
-            //_db.Add(book);
+
             _db.SaveChanges();
-            //  TempData["success"] = "Category updated successfully";
-            // return RedirectToAction("Index");
 
             return RedirectToAction("Details");
         }
 
-
+        //Remove the book
         public IActionResult Delete(int? id)
         {
 

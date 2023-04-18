@@ -14,16 +14,17 @@ namespace BookZone.Controllers
             _db = db;
 
         }
+
+        
         public IActionResult Index()
 		{
 			return View();
 		}
 
+
+        //Get details of that author
         public IActionResult Details(int Id)
         {
-
-            //var author = _db.Authors.Find(Id);
-            // var author = _db.Authors.FirstOrDefault(u => u.Id == Id);
 
             var authorWithBooks = _db.Authors.Include(a => a.Books).FirstOrDefault(a => a.Id == Id);
 
@@ -31,12 +32,9 @@ namespace BookZone.Controllers
         }
 
 
-
+        //Get the author id to edit
         public IActionResult Edit(int Id)
         {
-
-            //var author = _db.Authors.Find(Id);
-            // var author = _db.Authors.FirstOrDefault(u => u.Id == Id);
 
             var selectedAuthor = _db.Authors.FirstOrDefault(a => a.Id == Id);
 
@@ -44,29 +42,24 @@ namespace BookZone.Controllers
         }
 
 
-        //POST
+        //POST the edited author
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Author obj)
+        public IActionResult Edit(Author author)
         {
 
 
-            var selectedAuthor = _db.Authors.FirstOrDefault(a => a.Id == obj.Id);
+            var selectedAuthor = _db.Authors.FirstOrDefault(a => a.Id == author.Id);
 
-            selectedAuthor.Name = obj.Name;
-            selectedAuthor.Address = obj.Address;
+            selectedAuthor.Name = author.Name;
+            selectedAuthor.Address = author.Address;
 
-
-            // _db.Books.Update(obj);
-            //_db.Add(book);
             _db.SaveChanges();
-            //  TempData["success"] = "Category updated successfully";
-            // return RedirectToAction("Index");
 
             return RedirectToAction("Index");
         }
 
-
+        //Remove the Author
         public IActionResult Delete(int? id)
         {
 

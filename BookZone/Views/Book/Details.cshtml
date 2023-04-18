@@ -10,6 +10,13 @@
     <h4>Book</h4>
     <hr />
     <dl class="row">
+        <div class="container">
+
+            <img src="~/img/book.png" width="200" height="300" alt="Book Cover Image">
+        </div>
+
+
+
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Title)
         </dt>
@@ -33,6 +40,6 @@
     </dl>
 </div>
 <div>
-    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a  class="btn btn-primary" asp-action="Index">Back to List</a>
 </div>

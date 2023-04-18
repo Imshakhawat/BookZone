@@ -9,13 +9,8 @@
 <div>
     <h4>Author</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Id)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Id)
-        </dd>
+    <dl class="row ">
+
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -28,21 +23,19 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Address)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImgDir)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImgDir)
-        </dd>
+
     </dl>
 
-
+    <div>
+        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+        <a class="btn btn-primary" asp-action="Index">Back to List</a>
+    </div>
 
 
     @*<p> <h5>Name</h5> @Model.Name </p>
     <p> <h5>Address</h5> @Model.Address </p>*@
 
-    <h5> Books Written:</h5>
+    <h5 class = "mt-2"> Books Written:</h5>
 
     @foreach (var item in Model.Books)
     {
@@ -57,7 +50,4 @@
         </div>
     }
 </div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
-</div>
+

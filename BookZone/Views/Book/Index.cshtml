@@ -15,14 +15,17 @@
             <img src="~/img/book.png" class="card-img-top" alt="Book Cover Image">
             <div class="card-body">
                 <h5 class="card-title">@item.Title</h5>
-                <p class="card-text">@item.Language</p>
+            
                 <p class="card-text">
                     <a asp-controller="Author" asp-action="Details" asp-route-id="@item.AuthorId"
                    class="">@item.Author.Name</a>
-                    @*<a>@Html.ActionLink(item.Author.Name, "Details", "Author", new { id = item.Id }, null)</a>*@
-
                    </p>
+                
+                <a asp-controller="Book" asp-action="Details" asp-route-id="@item.Id"
+               class="btn btn-primary">Edit Details</a>
+            
             </div>
+           
         </div>
     }
 

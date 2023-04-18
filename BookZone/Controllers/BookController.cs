@@ -64,7 +64,7 @@ namespace BookZone.Controllers
             //  TempData["success"] = "Category updated successfully";
             // return RedirectToAction("Index");
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Details");
         }
 
 

@@ -38,22 +38,23 @@ namespace BookZone.Controllers
             //var author = _db.Authors.Find(Id);
             // var author = _db.Authors.FirstOrDefault(u => u.Id == Id);
 
-            var selectedBook = _db.Books.Include(a => a.Author).FirstOrDefault(a => a.Id == Id);
+            var selectedAuthor = _db.Authors.FirstOrDefault(a => a.Id == Id);
 
-            return View(selectedBook);
+            return View(selectedAuthor);
         }
 
 
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Book obj)
+        public IActionResult Edit(Author obj)
         {
 
 
-            var selectedBook = _db.Books.Include(a => a.Author).FirstOrDefault(a => a.Id == obj.Id);
+            var selectedAuthor = _db.Authors.FirstOrDefault(a => a.Id == obj.Id);
 
-            selectedBook.Title = obj.Title;
+            selectedAuthor.Name = obj.Name;
+            selectedAuthor.Address = obj.Address;
 
 
             // _db.Books.Update(obj);
@@ -65,6 +66,19 @@ namespace BookZone.Controllers
             return RedirectToAction("Index");
         }
 
+
+        public IActionResult Delete(int? id)
+        {
+
+            var selectedAuthor = _db.Authors.FirstOrDefault(a => a.Id == id);
+
+            _db.Remove(selectedAuthor);
+
+            _db.SaveChanges();
+
+
+            return RedirectToAction("Details"); ;
+        }
 
 
 
